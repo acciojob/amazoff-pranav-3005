@@ -47,7 +47,8 @@ public class OrderController {
     @GetMapping("/get-order-by-id/{orderId}")
     public ResponseEntity<Order> getOrderById(@PathVariable String orderId){
 
-        Order order= orderService.getOrderById(orderId);
+        Order o=orderService.getOrderById(orderId);
+        Order order= o;
         //order should be returned with an orderId.
 
         return new ResponseEntity<>(order, HttpStatus.CREATED);
